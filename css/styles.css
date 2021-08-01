@@ -186,14 +186,16 @@ section.featured {
 }
 section.featured .featured__container {
   max-width: 1366px;
+  width: 100%;
   padding: 0 10px;
   margin: 0 auto;
 }
 section.featured .featured__container .featured__wrapper {
   width: 100%;
-  padding: 10 20px;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   background: #fff;
   justify-content: space-around;
   border-right: 5px solid #ffd900;
@@ -262,6 +264,7 @@ section.offer .offer__container .offer__wrapper .offer__card {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 section.offer .offer__container .offer__wrapper .offer__card .card {
   width: 300px;
@@ -344,6 +347,7 @@ section.about .about__container {
   margin: 0 auto;
 }
 section.about .about__container .about__wrapper {
+  width: 100%;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -351,21 +355,25 @@ section.about .about__container .about__wrapper {
 }
 section.about .about__container .about__wrapper .about__content {
   flex-basis: 50%;
+  width: 100%;
 }
 section.about .about__container .about__wrapper .about__content .title {
   font-size: 1.15rem;
   font-weight: 700;
   color: var(--primaryColor);
   margin-bottom: 20px;
+  width: 100%;
 }
 section.about .about__container .about__wrapper .about__content .subtitle {
-  font-size: 2.86rem;
+  font-size: 2.66rem;
+  width: 100%;
   color: var(--titleColor);
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 30px;
 }
 section.about .about__container .about__wrapper .about__content .about__toggle {
+  width: 100%;
   margin-top: 30px;
   margin-bottom: 30px;
   border-bottom: 2px solid var(--primaryColor);
@@ -374,10 +382,12 @@ section.about .about__container .about__wrapper .about__content .about__toggle {
   justify-content: space-between;
 }
 section.about .about__container .about__wrapper .about__content .about__toggle a {
-  padding: 1rem 1.4rem;
+  width: 100%;
+  padding: 1rem 1rem;
   color: var(--textColor);
-  font-size: 1.45rem;
+  font-size: 1.25rem;
   margin-right: 30px;
+  text-align: center;
   cursor: pointer;
 }
 section.about .about__container .about__wrapper .about__content .about__toggle a.active {
@@ -427,7 +437,9 @@ section.partners .partners__container .partners__wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 10px 20px;
+  width: 100%;
 }
 section.partners .partners__container .partners__wrapper .brand {
   width: 100px;
@@ -502,9 +514,11 @@ section.footer .footer__container {
   margin: 0 auto;
 }
 section.footer .footer__container .footer__wrapper {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 10px 0;
 }
 section.footer .footer__container .footer__wrapper .company .logo {
@@ -632,9 +646,21 @@ section.footer .footer__container .copyright a {
 }
 
 @media screen and (max-width: 768px) {
+  .header {
+    padding: 0;
+  }
+  .header .navbar {
+    overflow: hidden;
+  }
+  .header .navbar .navbar__container {
+    width: 90%;
+  }
+  .header .navbar .navbar__container .navbar__wrapper {
+    width: 90%;
+  }
   .header .navbar .navbar__container .navbar__wrapper .mobile__menu {
     display: block;
-    padding: 1rem 1.5rem;
+    padding: 1rem 0;
   }
   .header .navbar .navbar__container .navbar__wrapper .mobile__menu ion-icon {
     display: flex;
@@ -657,6 +683,7 @@ section.footer .footer__container .copyright a {
     padding-right: 10px;
     background: var(--primaryColor);
     transition: 1s ease-in-out;
+    z-index: 999;
   }
   .header .navbar .navbar__container .navbar__wrapper .nav.active {
     right: 0;
@@ -686,5 +713,112 @@ section.footer .footer__container .copyright a {
     align-items: center;
     margin-top: 10px;
     color: #fff;
+  }
+  .header .hero .hero__container {
+    width: 90%;
+  }
+  .header .hero .hero__container .hero__wrapper {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+  }
+  .header .hero .hero__container .hero__wrapper .hero__content {
+    margin-top: -30px;
+  }
+  .header .hero .hero__container .hero__wrapper .hero__content h1 {
+    font-size: 2.46rem;
+  }
+  .header .hero .hero__container .hero__wrapper .hero__img {
+    margin-top: 50px;
+  }
+  .header .hero .hero__container .hero__wrapper .hero__img .img {
+    width: 300px;
+  }
+  .header .hero .hero__container .hero__wrapper .hero__img .img img {
+    width: 100%;
+  }
+
+  section.featured .featured__container {
+    width: 90%;
+  }
+  section.featured .featured__container .featured__wrapper {
+    width: 90%;
+  }
+
+  .offer .offer__container .offer__wrapper .offer__card .card {
+    margin-top: 50px;
+  }
+
+  section.about {
+    overflow: hidden;
+  }
+  section.about .about__container {
+    width: 100%;
+  }
+  section.about .about__container .about__wrapper {
+    width: 90%;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  section.about .about__container .about__wrapper .about__content .subtitle {
+    font-size: 2rem;
+    max-width: 300px;
+  }
+  section.about .about__container .about__wrapper .about__content .about__toggle {
+    width: 100%;
+  }
+  section.about .about__container .about__wrapper .about__img .img {
+    width: 350px;
+    margin: 0;
+  }
+  section.about .about__container .about__wrapper .about__img .img img {
+    width: 100%;
+  }
+
+  section.partners .partners__container {
+    width: 90%;
+  }
+  section.partners .partners__container .partners__wrapper {
+    width: 90%;
+  }
+  section.partners .partners__container .partners__wrapper .brand {
+    margin-top: 30px;
+  }
+
+  section.contact .contact__container {
+    width: 90%;
+  }
+  section.contact .contact__container .contact__wrapper {
+    width: 90%;
+  }
+  section.contact .contact__container .contact__wrapper a {
+    right: 60px;
+  }
+
+  section.footer .footer__container {
+    width: 90%;
+    padding: 0;
+  }
+  section.footer .footer__container .footer__wrapper {
+    width: 90%;
+    padding: 0;
+  }
+  section.footer .footer__container .footer__wrapper .company {
+    width: 90%;
+  }
+  section.footer .footer__container .footer__wrapper .company form {
+    display: flex;
+    flex-direction: column;
+  }
+  section.footer .footer__container .footer__wrapper .company form a {
+    margin-left: 0;
+    margin-top: 30px;
+    text-align: center;
+  }
+  section.footer .footer__container hr {
+    width: 90%;
+  }
+  section.footer .footer__container .copyright {
+    width: 90%;
   }
 }/*# sourceMappingURL=styles.css.map */

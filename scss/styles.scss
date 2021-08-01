@@ -210,14 +210,16 @@ section.featured {
   z-index: 2;
   .featured__container {
     max-width: 1366px;
+    width: 100%;
     padding: 0 10px;
     margin: 0 auto;
 
     .featured__wrapper {
       width: 100%;
-      padding: 10 20px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
       background: #fff;
       justify-content: space-around;
       border-right: 5px solid #ffd900;
@@ -295,6 +297,7 @@ section.offer {
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
 
         .card {
           width: 300px;
@@ -392,6 +395,7 @@ section.about {
     margin: 0 auto;
 
     .about__wrapper {
+      width: 100%;
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
@@ -399,15 +403,18 @@ section.about {
 
       .about__content {
         flex-basis: 50%;
+        width: 100%;
         .title {
           font-size: 1.15rem;
           font-weight: 700;
           color: var(--primaryColor);
           margin-bottom: 20px;
+          width: 100%;
         }
 
         .subtitle {
-          font-size: 2.86rem;
+          font-size: 2.66rem;
+          width: 100%;
           color: var(--titleColor);
           font-weight: 700;
           line-height: 1.2;
@@ -415,6 +422,7 @@ section.about {
         }
 
         .about__toggle {
+          width: 100%;
           margin-top: 30px;
           margin-bottom: 30px;
           border-bottom: 2px solid var(--primaryColor);
@@ -423,10 +431,12 @@ section.about {
           justify-content: space-between;
 
           a {
-            padding: 1rem 1.4rem;
+            width: 100%;
+            padding: 1rem 1rem;
             color: var(--textColor);
-            font-size: 1.45rem;
+            font-size: 1.25rem;
             margin-right: 30px;
+            text-align: center;
             cursor: pointer;
 
             &.active {
@@ -487,7 +497,9 @@ section.partners {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       padding: 10px 20px;
+      width: 100%;
 
       .brand {
         width: 100px;
@@ -580,9 +592,11 @@ section.footer {
     margin: 0 auto;
 
     .footer__wrapper {
+        width: 100%;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      flex-wrap: wrap;
       padding: 10px 0;
 
       .company {
@@ -658,7 +672,6 @@ section.footer {
         justify-content: center;
 
         .col {
-
           h1 {
             font-size: 1.52rem;
             color: #ffd900;
@@ -700,7 +713,7 @@ section.footer {
       align-items: center;
       justify-content: space-between;
       padding-bottom: 2rem;
-    //   margin-bottom: 30px;
+      //   margin-bottom: 30px;
 
       p {
         color: #fff;
@@ -721,12 +734,16 @@ section.footer {
 // MEDIA QUERY FOR SMALL SCREENS
 @media screen and (max-width: 768px) {
   .header {
+      padding: 0;
     .navbar {
+        overflow: hidden;
       .navbar__container {
+          width: 90%;
         .navbar__wrapper {
+            width: 90%;
           .mobile__menu {
             display: block;
-            padding: 1rem 1.5rem;
+            padding: 1rem 0;
 
             ion-icon {
               display: flex;
@@ -750,6 +767,7 @@ section.footer {
             padding-right: 10px;
             background: var(--primaryColor);
             transition: 1s ease-in-out;
+            z-index: 999;
 
             &.active {
               right: 0;
@@ -787,6 +805,147 @@ section.footer {
             }
           }
         }
+      }
+    }
+
+    .hero {
+      .hero__container {
+          width: 90%;
+        .hero__wrapper {
+            width: 80%;
+          display: flex;
+          flex-direction: column;
+
+          .hero__content {
+            margin-top: -30px;
+            h1 {
+              font-size: 2.46rem;
+              // text-align: center;
+            }
+          }
+
+          .hero__img {
+            margin-top: 50px;
+            .img {
+              width: 300px;
+              img {
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section.featured {
+    .featured__container {
+      width: 90%;
+    //   display: flex;
+    //   align-items: center;
+    //   justify-content: center;
+
+      .featured__wrapper{
+          width: 90%;
+      }
+    }
+  }
+
+  .offer {
+    .offer__container {
+      .offer__wrapper {
+        .offer__card {
+          .card {
+            margin-top: 50px;
+          }
+        }
+      }
+    }
+  }
+
+  section.about {
+      overflow: hidden;
+    .about__container {
+        width: 100%;
+      .about__wrapper {
+          width: 90%;
+        display: flex;
+        flex-direction: column-reverse;
+        .about__content {
+          .subtitle {
+            font-size: 2rem;
+            max-width: 300px;
+          }
+
+          .about__toggle {
+            width: 100%;
+          }
+        }
+
+        .about__img {
+          .img {
+            width: 350px;
+            margin: 0;
+            img {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  section.partners {
+
+    .partners__container {
+        width: 90%;
+      .partners__wrapper {
+          width: 90%;
+        .brand {
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+
+  section.contact{
+      .contact__container{
+          width: 90%;
+          .contact__wrapper{
+              width: 90%;
+              
+              a{
+                  right: 60px;
+              }
+          }
+      }
+  }
+
+  section.footer {
+    .footer__container {
+        width: 90%;
+        padding: 0;
+      .footer__wrapper {
+          width: 90%;
+          padding: 0;
+        .company {
+            width: 90%;
+          form {
+            display: flex;
+            flex-direction: column;
+            a {
+              margin-left: 0;
+              margin-top: 30px;
+              text-align: center;
+            }
+          }
+        }
+      }
+      hr{
+          width: 90%;
+      }
+      .copyright{
+          width: 90%;
       }
     }
   }
