@@ -29,16 +29,25 @@ ul {
   background-image: url(../assets/images/bg-3.jpg);
   background-position: center;
   background-size: cover;
+  margin-top: -100px;
 }
 .header .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100px;
+  z-index: 10;
+}
+.header .navbar.scrollNav {
+  background: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .header .navbar .navbar__container {
   max-width: 1366px;
   width: 100%;
   height: 100%;
-  padding: 10px 0px;
+  padding: 20px 0;
   margin: 0 auto;
 }
 .header .navbar .navbar__container .navbar__wrapper {
@@ -121,15 +130,20 @@ ul {
   transition: 0.5s ease;
 }
 .header .hero {
-  margin: 4rem 0 2rem;
+  margin: 4rem 0 4rem;
+  height: 100%;
+  width: 100%;
 }
 .header .hero .hero__container {
-  max-width: 1366px;
+  max-width: 1300px;
   width: 100%;
+  height: 100%;
   padding: 0 10px;
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 .header .hero .hero__container .hero__wrapper {
+  height: 100%;
   padding: 10px 20px;
   display: flex;
   align-items: center;
@@ -181,7 +195,7 @@ ul {
 
 section.featured {
   margin-bottom: 6rem;
-  margin-top: -60px;
+  margin-top: -80px;
   z-index: 2;
 }
 section.featured .featured__container {
@@ -263,7 +277,7 @@ section.offer .offer__container .offer__wrapper .offer__card {
   margin-top: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
 }
 section.offer .offer__container .offer__wrapper .offer__card .card {
@@ -273,6 +287,7 @@ section.offer .offer__container .offer__wrapper .offer__card .card {
   border-radius: 10px;
   border: none;
   box-shadow: 5px 8px 5px -1px rgba(0, 0, 0, 0.3);
+  margin-right: 20px;
 }
 section.offer .offer__container .offer__wrapper .offer__card .card:nth-child(1) {
   background: #e9fffa;
@@ -386,14 +401,14 @@ section.about .about__container .about__wrapper .about__content .about__toggle a
   padding: 1rem 1rem;
   color: var(--textColor);
   font-size: 1.25rem;
-  margin-right: 30px;
   text-align: center;
   cursor: pointer;
+  transition: 0.2s ease-in-out;
 }
 section.about .about__container .about__wrapper .about__content .about__toggle a.active {
   background: var(--primaryColor);
   color: #fff;
-  border: 3px solid var(--primaryColor);
+  border: 10px solid var(--primaryColor);
 }
 section.about .about__container .about__wrapper .about__content .desc {
   color: var(--textColor);
@@ -547,19 +562,28 @@ section.footer .footer__container .footer__wrapper .company p {
 }
 section.footer .footer__container .footer__wrapper .company form {
   margin: 20px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 section.footer .footer__container .footer__wrapper .company form input {
-  padding-right: 12rem;
+  padding-right: 1.2rem;
+  padding-left: 1.5rem;
   padding-top: 1.2rem;
   padding-bottom: 1rem;
   border: none;
   background: #cfb8a6;
+  color: #fff;
+  width: 300px;
+}
+section.footer .footer__container .footer__wrapper .company form input:focus {
+  outline: none;
+  border: none;
 }
 section.footer .footer__container .footer__wrapper .company form input::-moz-placeholder {
   text-transform: uppercase;
   color: #fff;
   font-weight: 400;
-  padding: 0.5rem 1.2rem;
   font-size: 0.95rem;
   font-family: "Poppins", sans-serif;
 }
@@ -567,7 +591,6 @@ section.footer .footer__container .footer__wrapper .company form input:-ms-input
   text-transform: uppercase;
   color: #fff;
   font-weight: 400;
-  padding: 0.5rem 1.2rem;
   font-size: 0.95rem;
   font-family: "Poppins", sans-serif;
 }
@@ -575,12 +598,11 @@ section.footer .footer__container .footer__wrapper .company form input::placehol
   text-transform: uppercase;
   color: #fff;
   font-weight: 400;
-  padding: 0.5rem 1.2rem;
   font-size: 0.95rem;
   font-family: "Poppins", sans-serif;
 }
 section.footer .footer__container .footer__wrapper .company form a {
-  padding: 1rem 1.5rem;
+  padding: 0.85rem 1.5rem;
   background: #fed800;
   color: #fff;
   text-transform: uppercase;
@@ -653,14 +675,14 @@ section.footer .footer__container .copyright a {
     overflow: hidden;
   }
   .header .navbar .navbar__container {
-    width: 90%;
+    width: 100%;
   }
   .header .navbar .navbar__container .navbar__wrapper {
-    width: 90%;
+    width: 100%;
   }
   .header .navbar .navbar__container .navbar__wrapper .mobile__menu {
     display: block;
-    padding: 1rem 0;
+    padding: 1rem 1.5rem;
   }
   .header .navbar .navbar__container .navbar__wrapper .mobile__menu ion-icon {
     display: flex;
@@ -714,8 +736,12 @@ section.footer .footer__container .copyright a {
     margin-top: 10px;
     color: #fff;
   }
+  .header .hero {
+    margin-top: 100px;
+  }
   .header .hero .hero__container {
     width: 90%;
+    height: 100%;
   }
   .header .hero .hero__container .hero__wrapper {
     width: 80%;
@@ -723,7 +749,7 @@ section.footer .footer__container .copyright a {
     flex-direction: column;
   }
   .header .hero .hero__container .hero__wrapper .hero__content {
-    margin-top: -30px;
+    margin-top: 100px;
   }
   .header .hero .hero__container .hero__wrapper .hero__content h1 {
     font-size: 2.46rem;
@@ -742,11 +768,13 @@ section.footer .footer__container .copyright a {
     width: 90%;
   }
   section.featured .featured__container .featured__wrapper {
+    margin-top: 100px;
     width: 90%;
   }
 
   .offer .offer__container .offer__wrapper .offer__card .card {
     margin-top: 50px;
+    margin-right: 0;
   }
 
   section.about {
@@ -809,6 +837,8 @@ section.footer .footer__container .copyright a {
   section.footer .footer__container .footer__wrapper .company form {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
   section.footer .footer__container .footer__wrapper .company form a {
     margin-left: 0;
