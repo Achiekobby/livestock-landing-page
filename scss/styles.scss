@@ -118,6 +118,10 @@ ul {
                 font-size: 1.15rem;
                 color: var(--textColor);
                 cursor: pointer;
+
+                &.active-link{
+                  color: #ffd900;
+                }
               }
             }
           }

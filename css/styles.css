@@ -112,6 +112,9 @@ ul {
   color: var(--textColor);
   cursor: pointer;
 }
+.header .navbar .navbar__container .navbar__wrapper .nav .nav__menu .nav__item .nav__link.active-link {
+  color: #ffd900;
+}
 .header .navbar .navbar__container .navbar__wrapper .nav .btn__transparent {
   padding: 1rem 1.5rem;
   color: #fff;
