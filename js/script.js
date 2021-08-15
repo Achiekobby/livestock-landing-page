@@ -21,7 +21,6 @@ listItems.forEach((item) =>
 );
 
 // SCROLL REVEAL ANIMATION
-
 const scrollReveal = ScrollReveal({
   reset: true,
   duration: 2000,
@@ -29,7 +28,7 @@ const scrollReveal = ScrollReveal({
   distance: "30px",
 });
 
-scrollReveal.reveal(`.featured, .card, .about, .brand,.contact`);
+scrollReveal.reveal(`.featured, .card, .about, .brand,.contact`,{interval:200});
 
 // CODE TO TOGGLE BETWEEN ABOUT US BUTTON
 const Btn = document.getElementsByClassName("toggle_menu");
@@ -77,7 +76,7 @@ const activeOnScroll = () => {
 
   sections.forEach((currentSection) => {
     const sectionHeight = currentSection.offsetHeight;
-    const sectionTop = currentSection.offsetTop-200;
+    const sectionTop = currentSection.offsetTop - 200;
     sectionId = currentSection.getAttribute("id");
 
     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
